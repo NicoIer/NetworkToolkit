@@ -23,10 +23,10 @@ namespace NetworkToolkit
             return (bytes[0] << 24) |
                    (bytes[1] << 16) |
                    (bytes[2] << 8) |
-                    bytes[3];
+                   bytes[3];
         }
-        
-          // Clamp so we don't have to depend on UnityEngine
+
+        // Clamp so we don't have to depend on UnityEngine
         public static int Clamp(int value, int min, int max)
         {
             if (value < min) return min;
@@ -94,9 +94,9 @@ namespace NetworkToolkit
         {
             return (int)(later - earlier);
         }
-        
-        
-                // helper function to resolve host to IPAddress
+
+
+        // helper function to resolve host to IPAddress
         public static bool ResolveHostname(string hostname, out IPAddress[] addresses)
         {
             try
@@ -120,13 +120,13 @@ namespace NetworkToolkit
             // log initial size for comparison.
             // remember initial size for log comparison
             int initialReceive = socket.ReceiveBufferSize;
-            int initialSend    = socket.SendBufferSize;
+            int initialSend = socket.SendBufferSize;
 
             // set to configured size
             try
             {
                 socket.ReceiveBufferSize = recvBufferSize;
-                socket.SendBufferSize    = sendBufferSize;
+                socket.SendBufferSize = sendBufferSize;
             }
             catch (SocketException)
             {
@@ -134,7 +134,8 @@ namespace NetworkToolkit
             }
 
 
-            Log.Info($"Kcp: RecvBuf = {initialReceive}=>{socket.ReceiveBufferSize} ({socket.ReceiveBufferSize/initialReceive}x) SendBuf = {initialSend}=>{socket.SendBufferSize} ({socket.SendBufferSize/initialSend}x)");
+            Log.Info(
+                $"Kcp: RecvBuf = {initialReceive}=>{socket.ReceiveBufferSize} ({socket.ReceiveBufferSize / initialReceive}x) SendBuf = {initialSend}=>{socket.SendBufferSize} ({socket.SendBufferSize / initialSend}x)");
         }
 
         // generate a connection hash from IP+Port.
@@ -155,6 +156,7 @@ namespace NetworkToolkit
         // RNG is cached to avoid runtime allocations.
         static readonly RNGCryptoServiceProvider cryptoRandom = new RNGCryptoServiceProvider();
         static readonly byte[] cryptoRandomBuffer = new byte[4];
+
         public static uint GenerateCookie()
         {
             cryptoRandom.GetBytes(cryptoRandomBuffer);

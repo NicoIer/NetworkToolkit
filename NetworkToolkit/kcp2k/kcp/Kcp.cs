@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace NetworkToolkit.kcp2k
 {
-    public class Kcp
+    internal class Kcp
     {
         // original Kcp has a define option, which is not defined by default:
         // #define FASTACK_CONSERVE
