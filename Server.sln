@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{27EC80FA-592C-4CAF-ADB5-67BDAB14DB5E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkToolkit", "NetworkToolkit\NetworkToolkit.csproj", "{9A9A4BB3-B255-4BEB-9AAC-07E6168BE9C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{27EC80FA-592C-4CAF-ADB5-67BDAB14DB5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27EC80FA-592C-4CAF-ADB5-67BDAB14DB5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27EC80FA-592C-4CAF-ADB5-67BDAB14DB5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A9A4BB3-B255-4BEB-9AAC-07E6168BE9C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A9A4BB3-B255-4BEB-9AAC-07E6168BE9C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A9A4BB3-B255-4BEB-9AAC-07E6168BE9C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A9A4BB3-B255-4BEB-9AAC-07E6168BE9C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
