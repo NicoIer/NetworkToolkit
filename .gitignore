@@ -34,3 +34,5 @@ bin/
 
 # Unity
 *.meta
+
+.DS_Store
