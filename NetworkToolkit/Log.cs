@@ -3,7 +3,7 @@
 // (this way we don't have to depend on UnityEngine)
 using System;
 
-namespace NetworkToolkit.kcp2k
+namespace NetworkToolkit
 {
     internal static class Log
     {

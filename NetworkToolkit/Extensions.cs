@@ -2,9 +2,9 @@ using System;
 using System.Net;
 using System.Net.Sockets;
 
-namespace NetworkToolkit.kcp2k
+namespace NetworkToolkit
 {
-    public static class Extensions
+    internal static class Extensions
     {
         // ArraySegment as HexString for convenience
         public static string ToHexString(this ArraySegment<byte> segment) =>

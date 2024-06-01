@@ -98,7 +98,7 @@ namespace NetworkToolkit.kcp2k
 
             // resolve host name before creating peer.
             // fixes: https://github.com/MirrorNetworking/Mirror/issues/3361
-            if (!Common.ResolveHostname(address, out IPAddress[] addresses))
+            if (!Utils.ResolveHostname(address, out IPAddress[] addresses))
             {
                 // pass error to user callback. no need to log it manually.
                 OnError(ErrorCode.DnsResolve, $"Failed to resolve host: {address}");
@@ -123,7 +123,7 @@ namespace NetworkToolkit.kcp2k
             socket.Blocking = false;
 
             // configure buffer sizes
-            Common.ConfigureSocketBuffers(socket, config.RecvBufferSize, config.SendBufferSize);
+            Utils.ConfigureSocketBuffers(socket, config.RecvBufferSize, config.SendBufferSize);
 
             // bind to endpoint so we can use send/recv instead of sendto/recvfrom.
             socket.Connect(remoteEndPoint);

@@ -7,7 +7,7 @@ using System.Threading;
 
 namespace NetworkToolkit.Telepathy
 {
-    public class Server : Common
+    public class Server : TelepathyListener
     {
         // events to hook into
         // => OnData uses ArraySegment for allocation free receives later

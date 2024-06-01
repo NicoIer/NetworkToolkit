@@ -1,8 +1,9 @@
 ﻿// Pool to avoid allocations (from libuv2k & Mirror)
+
 using System;
 using System.Collections.Generic;
 
-namespace NetworkToolkit.kcp2k
+namespace NetworkToolkit
 {
     public class Pool<T>
     {
@@ -16,7 +17,7 @@ namespace NetworkToolkit.kcp2k
         // some types might need additional cleanup for returned objects
         readonly Action<T> objectResetter;
 
-        public Pool(Func<T> objectGenerator, Action<T> objectResetter, int initialCapacity)
+        public Pool(Func<T> objectGenerator, Action<T> objectResetter = null, int initialCapacity = 0)
         {
             this.objectGenerator = objectGenerator;
             this.objectResetter = objectResetter;
@@ -33,7 +34,7 @@ namespace NetworkToolkit.kcp2k
         // return an element to the pool
         public void Return(T item)
         {
-            objectResetter(item);
+            objectResetter?.Invoke(item);
             objects.Push(item);
         }
 

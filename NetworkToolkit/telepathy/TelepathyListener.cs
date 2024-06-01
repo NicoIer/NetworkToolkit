@@ -1,7 +1,8 @@
 ﻿// common code used by server and client
+
 namespace NetworkToolkit.Telepathy
 {
-    public abstract class Common
+    public abstract class TelepathyListener
     {
         // IMPORTANT: DO NOT SHARE STATE ACROSS SEND/RECV LOOPS (DATA RACES)
         // (except receive pipe which is used for all threads)
@@ -31,7 +32,7 @@ namespace NetworkToolkit.Telepathy
         public int ReceiveTimeout = 0;
 
         // constructor
-        protected Common(int MaxMessageSize)
+        protected TelepathyListener(int MaxMessageSize)
         {
             this.MaxMessageSize = MaxMessageSize;
         }

@@ -164,7 +164,7 @@ namespace NetworkToolkit.kcp2k
             socket.Blocking = false;
 
             // configure buffer sizes
-            Common.ConfigureSocketBuffers(socket, config.RecvBufferSize, config.SendBufferSize);
+            Utils.ConfigureSocketBuffers(socket, config.RecvBufferSize, config.SendBufferSize);
         }
 
         public void Send(int connectionId, ArraySegment<byte> segment, KcpChannel channel)
@@ -209,7 +209,7 @@ namespace NetworkToolkit.kcp2k
                 if (socket.ReceiveFromNonBlocking(rawReceiveBuffer, out segment, ref newClientEP))
                 {
                     // set connectionId to hash from endpoint
-                    connectionId = Common.ConnectionHash(newClientEP);
+                    connectionId = Utils.ConnectionHash(newClientEP);
                     return true;
                 }
             }
@@ -251,7 +251,7 @@ namespace NetworkToolkit.kcp2k
         {
             // generate a random cookie for this connection to avoid UDP spoofing.
             // needs to be random, but without allocations to avoid GC.
-            uint cookie = Common.GenerateCookie();
+            uint cookie = Utils.GenerateCookie();
 
             // create empty connection without peer first.
             // we need it to set up peer callbacks.

@@ -47,7 +47,7 @@ namespace NetworkToolkit.Telepathy
         // pool count for testing
         public int PoolCount
         {
-            get { lock (this) { return pool.Count(); } }
+            get { lock (this) { return pool.Count; } }
         }
 
         // enqueue a message

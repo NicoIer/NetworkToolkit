@@ -80,7 +80,7 @@ namespace NetworkToolkit.Telepathy
         }
     }
 
-    public class Client : Common
+    public class Client : TelepathyListener
     {
         // events to hook into
         // => OnData uses ArraySegment for allocation free receives later
