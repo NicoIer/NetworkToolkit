@@ -57,7 +57,7 @@ namespace NetworkToolkit.WebSocket
     private volatile string         _file;
     private volatile LogLevel       _level;
     private Action<LogData, string> _output;
-    private object                  _sync;
+    private readonly object                  _sync;
 
     #endregion
 
@@ -123,9 +123,7 @@ namespace NetworkToolkit.WebSocket
     /// A <see cref="string"/> that represents the path to the log file if any.
     /// </value>
     public string File {
-      get {
-        return _file;
-      }
+      get => _file;
 
       set {
         lock (_sync)
@@ -148,9 +146,7 @@ namespace NetworkToolkit.WebSocket
     ///   </para>
     /// </value>
     public LogLevel Level {
-      get {
-        return _level;
-      }
+      get => _level;
 
       set {
         lock (_sync)

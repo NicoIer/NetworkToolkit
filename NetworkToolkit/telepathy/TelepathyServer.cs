@@ -7,7 +7,7 @@ using System.Threading;
 
 namespace NetworkToolkit.Telepathy
 {
-    public class Server : TelepathyListener
+    public class TelepathyServer : TelepathyListener
     {
         // events to hook into
         // => OnData uses ArraySegment for allocation free receives later
@@ -71,7 +71,7 @@ namespace NetworkToolkit.Telepathy
         public bool Active => listenerThread != null && listenerThread.IsAlive;
 
         // constructor
-        public Server(int MaxMessageSize) : base(MaxMessageSize) {}
+        public TelepathyServer(int MaxMessageSize) : base(MaxMessageSize) {}
 
         // the listener thread's listen function
         // note: no maxConnections parameter. high level API should handle that.

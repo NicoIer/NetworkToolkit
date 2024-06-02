@@ -80,7 +80,7 @@ namespace NetworkToolkit.Telepathy
         }
     }
 
-    public class Client : TelepathyListener
+    public class TelepathyClient : TelepathyListener
     {
         // events to hook into
         // => OnData uses ArraySegment for allocation free receives later
@@ -113,7 +113,7 @@ namespace NetworkToolkit.Telepathy
         public int ReceivePipeCount => state != null ? state.receivePipe.TotalCount : 0;
 
         // constructor
-        public Client(int MaxMessageSize) : base(MaxMessageSize)
+        public TelepathyClient(int MaxMessageSize) : base(MaxMessageSize)
         {
         }
 
