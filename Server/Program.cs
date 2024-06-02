@@ -1,13 +1,12 @@
-﻿using NetworkToolkit.kcp2k;
+﻿using Client;
+using NetworkToolkit.kcp2k;
 
 namespace Server;
 
 static class Program
 {
-    static void Main(string[] args)
+    static async Task Main(string[] args)
     {
-
+        await Telepathy_TEST.Test();
     }
-
-
 }

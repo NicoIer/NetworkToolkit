@@ -7,6 +7,7 @@ internal static class Program
 {
     private static async Task Main(string[] args)
     {
-        await KCP_Test.Test();
+        // await KCP_Test.Test();
+        await Telepathy_TEST.Test();
     }
 }
